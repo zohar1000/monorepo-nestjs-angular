@@ -1,0 +1,49 @@
+:host {
+  --header-height: 2.5rem;
+  position: relative;
+}
+
+header {
+  width: 100vw;
+  height: var(--header-height);
+  color: white;
+  background: black;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+  justify-content: space-between;
+  .user-context-menu-icon {
+    filter: invert(100);
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  .dropdown-menu {
+    inset: unset !important;
+    top: 200% !important;
+    right: 0 !important;
+  }
+}
+
+body {
+  display: flex;
+  padding-top: var(--header-height);
+  width: 100vw;
+
+  aside {
+    width: 10rem;
+    background: yellow;
+    padding-inline: 1rem;
+    padding-top: 1rem;
+    a {
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+}

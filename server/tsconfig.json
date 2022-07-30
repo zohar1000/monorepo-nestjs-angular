@@ -1,0 +1,22 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noEmit": false,
+		"preserveSymlinks": true,
+		"skipLibCheck": true,
+		"target": "es2020",
+		"paths": {
+			"@shared-all/*": ["shared-all/*"],
+			"@shared-server/*": ["server/src/shared/*"]
+		}
+	},
+	"exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+}

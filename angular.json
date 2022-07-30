@@ -1,0 +1,271 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "./",
+  "projects": {
+    "admin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "admin",
+      "sourceRoot": "admin/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/admin",
+            "index": "admin/src/index.html",
+            "main": "admin/src/main.ts",
+            "polyfills": "admin/src/polyfills.ts",
+            "tsConfig": "admin/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+						"allowedCommonJsDependencies": ["fast-safe-stringify"],
+            "assets": [
+							{
+								"glob": "favicon.ico",
+								"input": "admin/src",
+								"output": "assets"
+							},
+							{
+								"glob": "**/*",
+								"input": "assets",
+								"output": "assets"
+							}
+						],
+            "styles": [
+              "admin/src/styles/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/ngx-toastr/toastr.css"
+            ],
+						"stylePreprocessorOptions": {
+							"includePaths": [
+								"shared-apps/src/styles",
+								"admin/src/styles"
+							]
+						},
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "8mb",
+                  "maximumError": "15mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "20kb",
+                  "maximumError": "50kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "admin/src/environments/environment.ts",
+                  "with": "admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "admin:build:production"
+            },
+            "development": {
+              "browserTarget": "admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "admin/src/**/*.ts",
+              "admin/src/**/*.html",
+              "shared-apps/src/app/**/*.ts"
+            ]
+          }
+        }
+      }
+    },
+    "app2": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "app2",
+      "sourceRoot": "app2/src",
+      "prefix": "app2",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app2",
+            "index": "app2/src/index.html",
+            "main": "app2/src/main.ts",
+            "polyfills": "app2/src/polyfills.ts",
+            "tsConfig": "app2/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+						"allowedCommonJsDependencies": ["fast-safe-stringify"],
+            "assets": [
+							{
+								"glob": "favicon.ico",
+								"input": "app2/src",
+								"output": "assets"
+							},
+							{
+								"glob": "**/*",
+								"input": "assets",
+								"output": "assets"
+							}
+						],
+            "styles": [
+              "app2/src/styles/styles.scss",
+							"node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"node_modules/ngx-toastr/toastr.css"
+            ],
+						"stylePreprocessorOptions": {
+							"includePaths": [
+								"shared-apps/src/styles",
+								"app2/src/styles"
+							]
+						},
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "8mb",
+                  "maximumError": "15mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "20kb",
+                  "maximumError": "50kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "app2/src/environments/environment.ts",
+                  "with": "app2/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "app2:build:production"
+            },
+            "development": {
+              "browserTarget": "app2:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app2:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "app2/**/*.ts",
+              "shared-apps/src/app/**/*.ts"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
+}

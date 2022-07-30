@@ -1,0 +1,50 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "baseUrl": "./",
+    "declaration": false,
+    "downlevelIteration": false,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+		"importHelpers": false,
+		"incremental": true,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+		"noImplicitOverride": false,
+    "noImplicitReturns": true,
+		"noPropertyAccessFromIndexSignature": false,
+		"outDir": "./dist",
+		"removeComments": true,
+    "sourceMap": true,
+		"skipLibCheck": true,
+    "strict": false,
+		"strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
+    "target": "es2020",
+		"lib": [
+      "es2020", "DOM"
+    ],
+		"paths": {
+			"@angular/*": ["node_modules/@angular/*"],
+			"@shared-all/*": ["shared-all/*"],
+			"@env/*": ["shared-apps/src/environments/*"]
+		},
+		"typeRoots": [
+			"node_modules/@types"
+		]
+	},
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "fullTemplateTypeCheck": false,
+    "strictAttributeTypes": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": false
+  }
+}

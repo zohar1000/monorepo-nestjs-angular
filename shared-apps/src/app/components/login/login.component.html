@@ -1,0 +1,15 @@
+<div class="form-container">
+  <div>Login Form</div>
+
+  <form [formGroup]="formGroup">
+    <div>
+      <input formControlName="userName" class="form-control" placeholder="User Name">
+    </div>
+    <div>
+      <input [formControlName]="'password'" class="form-control" placeholder="Password">
+    </div>
+  </form>
+
+  <button type="button" class="btn btn-primary" (click)="onClickSubmit()">Login</button>
+  <div [ngStyle]="{ visibility: errorMessage ? 'visible' : 'hidden' }" class="error-message">{{errorMessage}}</div>
+</div>

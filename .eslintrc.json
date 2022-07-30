@@ -1,0 +1,135 @@
+{
+	"root": true,
+	"ignorePatterns": [
+		"src/**/*.spec.ts",
+		"src/*.spec.ts",
+		"src/**/*.scss",
+		"src/*.scss",
+		"src/**/*.js",
+		"src/*.js"
+	],
+	"overrides": [
+		{
+			"files": [
+				"*.ts"
+			],
+			"parserOptions": {
+				"project": [
+					"tsconfig.json"
+				],
+				"createDefaultProgram": false
+			},
+			"plugins": [
+				"@angular-eslint",
+				"@typescript-eslint"
+			],
+			"extends": [
+				// "plugin:@angular-eslint/recommended",
+				// "eslint:recommended",
+				// "plugin:@typescript-eslint/recommended",
+				// "plugin:@typescript-eslint/recommended-requiring-type-checking",
+				"plugin:@angular-eslint/template/process-inline-templates"
+			],
+			"rules": {
+				// ERORR RULES
+				"constructor-super": "error", // must have super in extand constarctors
+				"for-direction": "error", // avoid  infinite loop in for loop,
+				"no-compare-neg-zero": "error", // The rule should warn against code that tries to compare against -0
+				"no-const-assign":  "error", // Disallows modifying variables that are declared using const
+				"no-dupe-keys": "error", // Disallows duplicate keys in object literals.
+				"no-duplicate-case": "error", // Disallows duplicate case labels.
+				"no-dupe-args": "error", // Disallows duplicate arguments in function definitions.
+				"no-fallthrough": "error", // Disallows case statement fallthroughs.
+				"no-dupe-class-members": "error", // Disallows duplicate name in class members.
+				"no-invalid-regexp": "error", // Disallows invalid regular expression strings in RegExp constructors.
+				"no-irregular-whitespace": "error", // Disallows irregular whitespace characters.
+				"no-self-compare": "error", // Disallows comparisons where both sides are exactly the same.
+				"no-sparse-arrays": "error", // Disallows sparse arrays.
+				"no-template-curly-in-string": "error", // Disallows template literal placeholder syntax in regular strings.
+				"no-unexpected-multiline": "error", // Disallows confusing multiline expressions.
+				"no-unreachable": "error", // Disallows unreachable code after return, throw, continue, and break statements.
+				"no-unsafe-negation": "error", // Disallows negating the left operand of relational operators.
+				"use-isnan": "error", // This rule disallows comparisons to 'NaN'.
+				"valid-typeof": "error", // This rule enforces comparing typeof expressions to valid string literals.
+				"block-scoped-var": "error", // Enforces treating var as block scoped.
+				"no-loss-of-precision": "error", // Disallows number literals that lose precision.
+				"no-constructor-return": "error", // don't allow constactor with return
+				"no-dupe-else-if": "error", // Disallows duplicate conditions in if-else-if chains
+				"no-setter-return": "error", // Disallows returning values from setters.
+				"no-unsafe-optional-chaining": "error", // Disallows use of optional chaining in contexts where the undefined value is not allowed.
+				"no-useless-backreference": "error", // Disallows useless backreferences in regular expressions.
+				"require-atomic-updates": "error", // Disallows assignments that can lead to race conditions due to usage of await or yield.
+
+				// WARN RULES
+				"getter-return": "warn", // Enforces that a return statement is present in property getters
+				"no-class-assign": "warn", // Disallows modifying variables of class declarations.
+				"no-constant-condition": "warn", // Disallows constant expressions in conditions.
+				"no-empty-character-class": "warn", // Disallows empty character classes in regular expressions.
+				"no-empty-pattern": "warn", // Disallows empty destructuring patterns.
+				"no-ex-assign": "warn", // Disallows reassigning exceptions in catch clauses.
+				"no-func-assign": "warn", // Disallows reassigning function declarations.
+				"no-debugger": "warn", // Disallows the use of debugger.
+				"no-new-symbol": "warn", // Disallows new operators with the Symbol object.
+				"no-self-assign": "warn", // Disallows assignments where both sides are exactly the same.
+				// "no-this-before-super": "off", // Disallows use of this/super before calling super() in constructors.
+				"no-unmodified-loop-condition": "off", // Disallows unmodified conditions of loops.
+				"no-unsafe-finally": "warn", // Disallows control flow statements in finally blocks.
+
+
+				// OFF RULES
+				"no-cond-assign": "off", // Disallows assignment operators in conditional statements.
+				"no-inner-declarations": "off", // Disallows variable or function declarations in nested blocks.
+				"no-obj-calls": "off", // Disallows calling global object properties as functions.
+				"no-control-regex": "off", // Disallows control characters in regular expressions
+				"no-prototype-builtins": "off", // Disallows calling some Object.prototype methods directly on objects.
+				"accessor-pairs": "off", // Enforces getter/setter pairs in objects and classes.
+				"arrow-body-style": "off", // Requires bracers in arrow function bodies.
+				"capitalized-comments": "off", // Enforces or disallows capitalization of the first letter of a comment
+				"camelcase": "off", // Enforces camelcase naming convention.
+				"no-import-assign": "off", // Disallows assigning to imported bindings.
+				"no-misleading-character-class": "off", // Disallows characters which are made with multiple code points in character class syntax.
+				"no-promise-executor-return": "off", // Disallows returning values from Promise executor functions.
+				"no-unreachable-loop": "off", // Disallows loop's with a body that allows only one iteration.
+				"no-unused-vars": "off",
+				"no-undef": "off", // Disallows the use of undeclared variables unless mentioned in /*global */ comments.
+				"no-use-before-define": "off", // Disallows the use of variables before they are defined.
+				"@typescript-eslint/ban-types": "off", // Bans specific types from being used
+				"@typescript-eslint/prefer-readonly": "off",
+				"@typescript-eslint/consistent-type-assertions": "off",
+				"@typescript-eslint/consistent-type-definitions": ["off", "type"],
+				"@typescript-eslint/init-declarations": "off",
+				"no-duplicate-imports": "off", // Disallows duplicate imports.
+
+				"@typescript-eslint/comma-dangle": "error",
+				"@typescript-eslint/comma-spacing": "error",
+				"@typescript-eslint/consistent-indexed-object-style": ["error", "index-signature"],
+				"@typescript-eslint/func-call-spacing": "error",
+				"@typescript-eslint/keyword-spacing": "error",
+				"@typescript-eslint/lines-between-class-members": ["off", "always", { "exceptAfterOverload": false }],
+				"@typescript-eslint/member-delimiter-style": "error",
+				"@typescript-eslint/no-base-to-string": "error",
+				"@typescript-eslint/no-confusing-non-null-assertion": "error",
+				"@typescript-eslint/no-dupe-class-members": "error",
+				"@typescript-eslint/no-duplicate-imports": "error",
+				"@typescript-eslint/no-empty-interface": "error"
+
+
+				// MAYBE RULES
+				// "@typescript-eslint/dot-notation": "warn",
+				// "explicit-function-return-type": "warn"
+				// "@typescript-eslint/no-empty-function": "warn"
+			}
+		},
+		{
+			"files": [
+				"*.html"
+			],
+			"extends": [
+				"plugin:@angular-eslint/template/recommended"
+			],
+			"rules": {
+				"@angular-eslint/template/no-negated-async": "off"
+			}
+		}
+	]
+}

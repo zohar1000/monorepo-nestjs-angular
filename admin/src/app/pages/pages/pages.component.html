@@ -1,0 +1,30 @@
+<div class="">
+  <header>
+    <div>Coin Razor</div>
+    <div class="user-area">{{user.firstName}}
+      <div class="btn-group" dropdown>
+        <img dropdownToggle
+             src="/assets/icons/three-dots-vertical.svg"
+             alt="user context menu icon"
+             class="user-context-menu-icon"
+             aria-controls="dropdown-basic">
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="user menu">
+          <li role="menuitem"><a class="dropdown-item" (click)="onClickLogout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <body>
+    <aside>
+      <a routerLink="/home">Home</a>
+    </aside>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+
+  </body>
+
+</div>

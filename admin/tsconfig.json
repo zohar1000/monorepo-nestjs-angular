@@ -1,0 +1,26 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+		"paths": {
+      "@shared-apps/*": ["../shared-apps/src/app/*"],
+			"@shared-apps-module": ["../shared-apps/src/shared-apps.module.ts"],
+			"@shared-all/*": ["../shared-all/*"],
+			"@env/*": ["../shared-apps/src/environments/*"],
+      "@enums/*": ["src/app/enums/*"]
+		}
+  },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.stub.ts",
+		"../server/**.*"
+  ]
+}

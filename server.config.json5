@@ -1,0 +1,58 @@
+{
+	env: 'development',
+	brandName: 'Sample App',
+	host: 'http://localhost:3000',
+	port: 3000,
+	globalApiPrefix: 'api',
+	mongodb: {
+		type: 'mongodb',
+		url: 'mongodb://admin:admin@127.0.0.1:27017/coin-razor',
+		useNewUrlParser: true,
+		synchronize: false, // process.env.NODE_ENV !== 'production',
+		logging: true,
+		entities: [],
+		retryAttempts: 0,
+		autoLoadEntities: false,
+		verboseRetryLog: true
+	},
+	paths: {
+		assetsFolder: './assets',
+		clientIndexFile: '../client/src/index.html'
+	},
+	auth: {
+		jwt: {
+			accessTokenExpiresIn: '10m',  // '10m'   in seconds,
+			accessTokenSecretKey: 'kfs40s2mdf7k40dgd',
+			refreshTokenExpiresIn: '4h',  // 4h',  // in seconds,
+			refreshTokenSecretKey: 'kfs40s2mdf8k40dgd'
+		}
+	},
+	logging: {
+		isDebug: true,
+		isLogClientRequests: false,
+		// excludedLogRequests: ['/device/version?'],
+		isLogClientResponses: false,
+		excludedLogResponses: ['/device/version?'],
+		maxLogRecords: 500
+	},
+	simulation: {
+		isEnabled: false
+	},
+	mail: {
+		domain: 'smtp.gmail.com',
+		apiKey: '123',
+		fromEmail: '123',
+		fromTitle: '123',
+		mailStatusLink: 'https://app.mailgun.com/app/sending/domains/{{domain}}/logs',
+	},
+	encryption: {
+		algorithm: 'aes-256-cbc',
+		key: '82ad8cd30dca74cb8720bdfe9973bd97', // must be 32 chars
+		ivLen: 16,
+		password: {
+			saltSize: 16,
+			saltFormat: 'hex',
+			algorithm: 'sha512'
+		}
+	}
+}
